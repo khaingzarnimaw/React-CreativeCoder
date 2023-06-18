@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/index";
 import PostsList from "./components/PostsList/index";
 import Modal from "./components/Modal/index";
 import './App.css'
+import PostForm from "./components/PostForm";
 
 const App = () => {
   let [showModal, setshowModal] = useState(false);
@@ -35,13 +36,14 @@ const App = () => {
          
         // <Modal danger = {false}>
         <Modal setshowModal={setshowModal}>
-          <h1>Terms and Conditions</h1>
+          {/* <h1>Terms and Conditions</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
             veritatis voluptas est. Cumque error temporibus repellat, deserunt,
             quisquam eligendi quasi, quibusdam porro officiis minima sapiente
             voluptate distinctio possimus facere suscipit?
-          </p>
+          </p> */}
+          <PostForm/>
           
         </Modal>
       }
