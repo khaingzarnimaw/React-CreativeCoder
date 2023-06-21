@@ -3,13 +3,13 @@
     padding:10px;
     color: white;
 }
-.navbar .container{
+/* .navbar .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: auto;
-  }
+  } */
 
 .navbar .container  ul{
    display: flex

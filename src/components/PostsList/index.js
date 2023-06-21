@@ -3,7 +3,7 @@ import './index.css'
 import style from './single_post.module.css'
 
 export default function PostsList({posts}) {
-    console.log(posts);
+    // console.log(posts);
   return (
     // index.css မှာပေးထားတဲ့ container ကို လာထဲ့တာပါ
     //list တွေကို loop ပတ်နည်း

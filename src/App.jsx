@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar/index";
 import PostsList from "./components/PostsList/index";
 import Modal from "./components/Modal/index";
-import './App.css'
+import "./App.css";
 import PostForm from "./components/PostForm";
 
 const App = () => {
@@ -17,11 +17,13 @@ const App = () => {
       id: 2,
       title: "Second post",
     },
-    {
-      id: 3,
-      title: "Third post",
-    },
   ]);
+
+    let addPost =(post)=>{
+        setPosts((prevState => [...prevState,post]))
+        setshowModal(false);
+    }
+
   return (
     <>
       {/* < Navbar/> ထဲမှာ setShowModal={setshowModal} ကိုထဲ့လိုက်တာfunction တွေကိုpropsအနေနဲ့ ပို့ချင်လို့ */}
@@ -32,8 +34,8 @@ const App = () => {
       <h1>Zoom class is available now.</h1>
        <p>feel free to <a href=''>join</a> here</p>
      </Modal> */}
-      {showModal && 
-         
+
+      {showModal && (
         // <Modal danger = {false}>
         <Modal setshowModal={setshowModal}>
           {/* <h1>Terms and Conditions</h1>
@@ -43,10 +45,9 @@ const App = () => {
             quisquam eligendi quasi, quibusdam porro officiis minima sapiente
             voluptate distinctio possimus facere suscipit?
           </p> */}
-          <PostForm/>
-          
+          <PostForm  addPost={addPost}/>
         </Modal>
-      }
+      )}
     </>
   );
 };

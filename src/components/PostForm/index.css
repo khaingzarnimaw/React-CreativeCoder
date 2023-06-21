@@ -7,6 +7,7 @@
 .post-form input {
     width: 80%;
     border: 1px solid gray;
+    padding:4px;
     border-radius: 5px;
 }
 .post-form button{
