@@ -2,23 +2,27 @@ import React from "react";
 import "./index.css";
 import { useState } from "react";
 import { upload } from "@testing-library/user-event/dist/upload";
+import { useRef} from "react";
 
 export default function Index({addPost}) {
-  let [title, setTitle] = useState("");
+  // let [title, setTitle] = useState("");
 
   // let onChangeHandler =(e)=>{
   //    setTitle(e.target.value);
   // }
+  let title = useRef() //Dom note  
   let resetForm = () => {
-    setTitle("");
+    // setTitle("");
+    title.current.value='';//Dom node
     console.log("update successfully");
   };
 
   let upload_post = (e) => {
     e.preventDefault(); //prevent refreshing page
+    console.log();
   let post = {
       id: Math.floor(Math.random() * 10000),//database ပါရင်ထည့်လို့ရမယ်
-      title: title,
+      title: title.current.value//Dom node
     };
     resetForm()
     // console.log(post);
@@ -33,8 +37,8 @@ export default function Index({addPost}) {
         {/* <input type="text" onChange ={ onChangeHandler}></input> */}
         <input
           type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
+          // onChange={(e) => setTitle(e.target.value)}
+           ref = {title}//value ={title}
         />
       </div>
 
